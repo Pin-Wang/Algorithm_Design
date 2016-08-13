@@ -18,8 +18,8 @@ public class 插入排序 {
 		for(int i=0;i<num;i++){
 			arr[i]=scanner.nextInt();
 		}
-		insertSort(arr, num);
-		//fastSort(arr, 0, num-1);
+		//insertSort(arr, num);
+		hillSort(arr, num);
 		for(int i=0;i<num;i++){
 			System.out.print(arr[i]+" ");
 		}
@@ -48,5 +48,24 @@ public class 插入排序 {
 	} 
 	
 	//希尔排序（加强版的不稳定的插入排序），最好，平均，最坏情况下时间复杂度是O(n),O(n^1.5),O(n*n)
-	public void inse
+	public static void hillSort(int[] arr,int len){
+		//步长从len/2开始，逐渐缩小
+		for(int bc=len/2;bc>0;bc/=2){
+			//在每一个步长范围进行直接插入
+			for(int i=bc;i<len;i+=bc){
+				int current=arr[i];
+				int j=i-bc;
+				for(;j>=0;j-=bc){
+					if(arr[j]>current){
+						arr[j+bc]=arr[j];
+					}
+					else{
+						break;
+					}
+				}
+				arr[j+bc]=current;
+			}
+		}
+		
+	}
 }
