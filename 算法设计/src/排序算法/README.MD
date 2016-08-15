@@ -14,3 +14,9 @@
 ![希尔排序详解](https://github.com/Pin-Wang/Algorithm_Design/blob/master/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1/image/1332682885_4073.png)
 
 ----------
+
+直接选择排序（不稳定的排序算法），时间复杂度均为O（n*n)
+
+----------
+
+堆排序（不稳定的选择排序算法），时间复杂度均为O(n*logn)
